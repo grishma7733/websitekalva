@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Maintenance Scheduler</title>
+    <link rel="stylesheet" href="/scheduler-form.css">
+    <script src="/sf2.js" defer></script>
+    <!-- Add Font Awesome for the search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Maintenance Scheduler</h1>
+        <button id="backBtn" class="back-btn">Back to Dashboard</button>
+    </header>
+    <main class="container">
+        <form id="schedulerForm" class="scheduler-form">
+            <div class="form-group">
+                <label for="bedtc">Enter BEDTC:</label>
+                <div class="search-container">
+                    <input type="text" id="bedtc" name="bedtc" required>
+                    <button type="button" id="searchBtn" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="unitNo">Unit No:</label>
+                <input type="text" id="unitNo" name="unitNo" readonly>
+            </div>
+            <div class="form-group">
+                <label>Select Coaches:</label>
+                <div id="coachSelection" class="coach-selection"></div>
+            </div>
+            <div class="form-group">
+                <label>Schedule Type:</label>
+                <div class="schedule-type">
+                    <label><input type="radio" name="scheduleType" value="IA" required> IA</label>
+                    <label><input type="radio" name="scheduleType" value="TI"> TI</label>
+                    <label><input type="radio" name="scheduleType" value="IC"> IC</label>
+                    <label><input type="radio" name="scheduleType" value="POH"> POH</label>
+                    <label><input type="radio" name="scheduleType" value="Washing"> Washing</label>
+                    <label><input type="radio" name="scheduleType" value="Mopping"> Mopping</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="scheduleDate">Schedule Date:</label>
+                <input type="date" id="scheduleDate" name="scheduleDate" value="<%= new Date().toISOString().split('T')[0] %>" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </main>
+</body>
+</html>

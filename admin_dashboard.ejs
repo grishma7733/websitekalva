@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/admindashboard.css">
+    
+</head>
+<body>
+    <header class="header">
+        <h1><%= headerTitle %></h1>
+        <button class="logout-btn">Logout</button>
+    </header>
+    <main class="container">
+        <div class="dashboard">
+            <% dashboardItems.forEach((item, index) => { %>
+                <a  href="<%=item.url%>" class="card" style="animation-delay: <%= (0.1 * (index + 1)).toFixed(1) %>s;">
+                    <div class="icon"><%- item.icon %></div>
+                    <h2><%= item.title %></h2>
+                    <p><%= item.description %></p>
+                </a>
+            <% }); %>
+        </div>
+    </main>
+</body>
+</html>

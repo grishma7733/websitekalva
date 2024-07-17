@@ -1,0 +1,190 @@
+:root {
+    --color-light-gray: #E6E6E6;
+    --color-light-blue: #A7C7E7;
+    --color-blue: #1E90FF;
+    --color-yellow: #FFD700;
+    --color-dark-yellow: #FFA500;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-light-gray);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+.header {
+    background-color: var(--color-blue);
+    color: var(--text-light);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.back-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-yellow);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background-color: var(--color-dark-yellow);
+    transform: translateY(-2px);
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.scheduler-form {
+    background-color: var(--text-light);
+    border-radius: 8px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-light-blue);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+select:focus, input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 2px rgba(30, 144, 255, 0.2);
+}
+
+.coach-selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 0.5rem;
+}
+
+.coach-selection label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.coach-selection input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.schedule-type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.schedule-type label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.schedule-type input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--color-blue);
+    color: var(--text-light);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    background-color: var(--color-dark-yellow);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 600px) {
+    .scheduler-form {
+        padding: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+
+    .back-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.search-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #0056b3;
+}
+
+.fas {
+    font-size: 16px;
+}

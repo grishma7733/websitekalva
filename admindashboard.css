@@ -1,0 +1,160 @@
+:root {
+    --color-light-gray: #E6E6E6;
+    --color-light-blue: #A7C7E7;
+    --color-blue: #1E90FF;
+    --color-yellow: #FFD700;
+    --color-dark-yellow: #FFA500;
+    --color-red: #FF6347;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-light-gray);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background-color: var(--color-blue);
+    color: var(--text-light);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+.header h1 {
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.logout-btn {
+    padding: 10px 20px;
+    background-color: var(--color-red);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: var(--color-dark-yellow);
+    transform: scale(1.05);
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 20px;
+}
+
+.dashboard a{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+}
+
+.dashboard a.card {
+    background-color: var(--color-light-blue);
+    color: var(--text-dark);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-out backwards;
+    margin: 10px; /* Add some margin if needed */
+    display:inline-block; 
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dashboard a.card:hover {
+    transform: scale(1.05) translateY(-5px);
+    background-color: var(--color-blue);
+    color: var(--text-light);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard a.card .icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: var(--color-blue);
+    transition: all 0.3s ease;
+}
+
+
+.dashboard a.card:hover .icon {
+    color: var(--color-yellow);
+    transform: scale(1.1) rotate(360deg);
+}
+
+
+.dashboard a.card h2 {
+    margin: 15px 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dashboard a.card p {
+    font-size: 14px;
+    color: var(--text-dark);
+    margin: 0;
+}
+.dashboard a.card:hover p {
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        /* flex-direction: column;
+        align-items: center; */
+        justify-content: space-around;
+    }
+
+    .dashboard a.card {
+        width: 80%;
+        max-width: 250px;
+    }
+}
